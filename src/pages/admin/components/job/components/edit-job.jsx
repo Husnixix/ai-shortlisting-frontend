@@ -30,7 +30,7 @@ const EditJobCard = () => {
         if (id) {
           console.log("Job ID from URL:", id);
           const token = await session.getToken(); 
-          const response = await axios.get(`http://localhost:5000/jobs/${id}`, {
+          const response = await axios.get(`https://aidf-back-end-production.up.railway.app/jobs/${id}`, {
             headers: {
               'Authorization': `Bearer ${token}`,
             },
@@ -66,7 +66,7 @@ const EditJobCard = () => {
 
     try {
       const token = await session.getToken(); 
-      const response = await axios.put(`http://localhost:5000/jobs/${id}`, jobData, {
+      const response = await axios.put(`https://aidf-back-end-production.up.railway.app/jobs/${id}`, jobData, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`, 

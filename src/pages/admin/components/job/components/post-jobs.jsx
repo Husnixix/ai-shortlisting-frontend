@@ -32,7 +32,7 @@ const PostJob = () => {
 
     try {
       const token = await session.getToken();
-      const response = await fetch('http://localhost:5000/jobs', {
+      const response = await fetch('https://aidf-back-end-production.up.railway.app/jobs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

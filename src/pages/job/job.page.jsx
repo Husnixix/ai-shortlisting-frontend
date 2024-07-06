@@ -33,7 +33,7 @@ function JobPage() {
                     const token = await session.getToken();
                     console.log("Retrieved token:", token);
                     
-                    const response = await axios.get(`http://localhost:5000/jobs/${id}`, {
+                    const response = await axios.get(`https://aidf-back-end-production.up.railway.app/jobs/${id}`, {
                         headers: {
                             'Authorization': `Bearer ${token}`
                         }
@@ -54,7 +54,7 @@ function JobPage() {
     const createJobApplication = async (jobApplication) => {
         try {
             const token = await session.getToken();
-            const response = await fetch('http://localhost:5000/jobApplications', {
+            const response = await fetch('https://aidf-back-end-production.up.railway.app/jobApplications', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

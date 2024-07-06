@@ -6,7 +6,7 @@ function JobSection() {
     const [displayAllJobs, setJobs] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/jobs`)
+        axios.get(`https://aidf-back-end-production.up.railway.app/jobs`)
             .then((response) => {
                   setJobs(response.data);
                     console.log(response.data);

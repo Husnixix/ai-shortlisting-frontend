@@ -4,7 +4,7 @@ export const deleteJob = async (id) => {
 
    const token = await window.Clerk.session.getToken();
     try {
-        const response = await axios.delete(`http://localhost:5000/jobs/${id}`, {
+        const response = await axios.delete(`https://aidf-back-end-production.up.railway.app/jobs/${id}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

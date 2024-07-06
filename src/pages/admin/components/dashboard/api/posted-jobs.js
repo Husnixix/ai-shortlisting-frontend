@@ -3,7 +3,7 @@ import axios from "axios";
 export const noOfPostedJobs = async () => {
   try {
     const token = await window.Clerk.session.getToken();
-    const response = await axios.get('http://localhost:5000/jobs/posted', {
+    const response = await axios.get('https://aidf-back-end-production.up.railway.app/jobs/posted', {
       headers: {
         Authorization: `Bearer ${token}`
       }

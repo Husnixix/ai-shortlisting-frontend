@@ -3,7 +3,7 @@ import axios from "axios";
 export const deleteJobApplication = async (_id) => {
   const token = await window.Clerk.session.getToken();
   try {
-    const response = await axios.delete(`http://localhost:5000/jobApplications/${_id}`, {
+    const response = await axios.delete(`https://aidf-back-end-production.up.railway.app/jobApplications/${_id}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
