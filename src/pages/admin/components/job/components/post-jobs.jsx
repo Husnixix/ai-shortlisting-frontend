@@ -32,7 +32,7 @@ const PostJob = () => {
 
     try {
       const token = await session.getToken();
-      const response = await fetch('https://https://ai-shortlisting-backend.vercel.app/jobs', {
+      const response = await fetch('https://ai-shortlisting-backend.vercel.app/jobs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

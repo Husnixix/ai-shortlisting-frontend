@@ -6,7 +6,7 @@ function JobSection() {
     const [displayAllJobs, setJobs] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://https://ai-shortlisting-backend.vercel.app/jobs`)
+        axios.get(`https://ai-shortlisting-backend.vercel.app/jobs`)
             .then((response) => {
                 setJobs(response.data);
                 console.log(response.data);

@@ -3,7 +3,7 @@ import axios from "axios";
 export const getJobApplications = async () => {
   const token = await window.Clerk.session.getToken();
   try {
-    const res = await axios.get(`https://https://ai-shortlisting-backend.vercel.app/jobApplications`, {
+    const res = await axios.get(`https://ai-shortlisting-backend.vercel.app/jobApplications`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

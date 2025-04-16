@@ -33,7 +33,7 @@ function JobPage() {
                     const token = await session.getToken();
                     console.log("Retrieved token:", token);
 
-                    const response = await axios.get(`https://https://ai-shortlisting-backend.vercel.app/jobs/${id}`, {
+                    const response = await axios.get(`https://ai-shortlisting-backend.vercel.app/jobs/${id}`, {
                         headers: {
                             'Authorization': `Bearer ${token}`
                         }
@@ -54,7 +54,7 @@ function JobPage() {
     const createJobApplication = async (jobApplication) => {
         try {
             const token = await session.getToken();
-            const response = await fetch('https://https://ai-shortlisting-backend.vercel.app/jobApplications', {
+            const response = await fetch('https://ai-shortlisting-backend.vercel.app/jobApplications', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
