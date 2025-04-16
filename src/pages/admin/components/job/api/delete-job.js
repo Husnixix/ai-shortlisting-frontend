@@ -2,9 +2,9 @@ import axios from "axios";
 
 export const deleteJob = async (id) => {
 
-   const token = await window.Clerk.session.getToken();
+    const token = await window.Clerk.session.getToken();
     try {
-        const response = await axios.delete(`https://aidf-back-end-production.up.railway.app/jobs/${id}`, {
+        const response = await axios.delete(`https://https://ai-shortlisting-backend.vercel.app/jobs/${id}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

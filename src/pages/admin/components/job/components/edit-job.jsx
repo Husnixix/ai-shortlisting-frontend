@@ -29,8 +29,8 @@ const EditJobCard = () => {
       try {
         if (id) {
           console.log("Job ID from URL:", id);
-          const token = await session.getToken(); 
-          const response = await axios.get(`https://aidf-back-end-production.up.railway.app/jobs/${id}`, {
+          const token = await session.getToken();
+          const response = await axios.get(`https://https://ai-shortlisting-backend.vercel.app/jobs/${id}`, {
             headers: {
               'Authorization': `Bearer ${token}`,
             },
@@ -65,11 +65,11 @@ const EditJobCard = () => {
     };
 
     try {
-      const token = await session.getToken(); 
-      const response = await axios.put(`https://aidf-back-end-production.up.railway.app/jobs/${id}`, jobData, {
+      const token = await session.getToken();
+      const response = await axios.put(`https://https://ai-shortlisting-backend.vercel.app/jobs/${id}`, jobData, {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`, 
+          'Authorization': `Bearer ${token}`,
         },
       });
 

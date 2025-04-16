@@ -18,7 +18,7 @@ const PostJob = () => {
   const [jobType, setJobType] = useState('');
   const [jobLocation, setJobLocation] = useState('');
   const [alertMessage, setAlertMessage] = useState(null);
-  const {session} = useSession();
+  const { session } = useSession();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -32,7 +32,7 @@ const PostJob = () => {
 
     try {
       const token = await session.getToken();
-      const response = await fetch('https://aidf-back-end-production.up.railway.app/jobs', {
+      const response = await fetch('https://https://ai-shortlisting-backend.vercel.app/jobs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

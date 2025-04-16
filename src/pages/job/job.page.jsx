@@ -14,7 +14,7 @@ function JobPage() {
     const { id } = useParams();
     const [job, setJob] = useState(null);
     const { isLoaded, isSignedIn, user } = useUser();
-    const { session } = useSession(); 
+    const { session } = useSession();
     const [alertMessage, setAlertMessage] = useState(null);
 
     const [formData, setFormData] = useState({
@@ -28,20 +28,20 @@ function JobPage() {
         const fetchJob = async () => {
             if (id && isSignedIn && session) {
                 console.log("Job ID from URL:", id);
-                
+
                 try {
                     const token = await session.getToken();
                     console.log("Retrieved token:", token);
-                    
-                    const response = await axios.get(`https://aidf-back-end-production.up.railway.app/jobs/${id}`, {
+
+                    const response = await axios.get(`https://https://ai-shortlisting-backend.vercel.app/jobs/${id}`, {
                         headers: {
                             'Authorization': `Bearer ${token}`
                         }
-                    });     
+                    });
 
                     setJob(response.data);
                     console.log(response.data);
-                   
+
                 } catch (err) {
                     console.error("Error fetching job:", err);
                 }
@@ -54,7 +54,7 @@ function JobPage() {
     const createJobApplication = async (jobApplication) => {
         try {
             const token = await session.getToken();
-            const response = await fetch('https://aidf-back-end-production.up.railway.app/jobApplications', {
+            const response = await fetch('https://https://ai-shortlisting-backend.vercel.app/jobApplications', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ function JobPage() {
                         </div>
                     </div>
                 </div>
-                
+
                 <Separator />
                 <div className="bg-muted mt-5 p-3 rounded">
                     <form action="" className="" onSubmit={handleSubmit}>
@@ -139,15 +139,15 @@ function JobPage() {
                         </div>
                         <div className="flex flex-col gap-y-4 mt-4">
                             <Label>Can you describe a recent project you worked on that required significant technical expertise? What technologies did you use, and what was your specific role in the project?</Label>
-                            <Textarea type="textarea" placeholder="" name="a1" value={formData.a1} onChange={handleChange} required/>
+                            <Textarea type="textarea" placeholder="" name="a1" value={formData.a1} onChange={handleChange} required />
                         </div>
                         <div className="flex flex-col gap-y-4 mt-4">
                             <Label>Tell us about a challenging problem you encountered in a previous role and how you approached solving it. What steps did you take, and what was the outcome?</Label>
-                            <Textarea type="textarea" placeholder="" name="a2" value={formData.a2} onChange={handleChange} required/>
+                            <Textarea type="textarea" placeholder="" name="a2" value={formData.a2} onChange={handleChange} required />
                         </div>
                         <div className="flex flex-col gap-y-4 mt-4">
                             <Label>Describe a time when you had to work closely with a team to achieve a common goal. How did you handle communication and collaboration, and what was the result of your teamwork?</Label>
-                            <Textarea type="textarea" placeholder="" name="a3" value={formData.a3} onChange={handleChange} required/>
+                            <Textarea type="textarea" placeholder="" name="a3" value={formData.a3} onChange={handleChange} required />
                         </div>
                         <Button type="submit" className="mt-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 w-full">Submit</Button>
                     </form>

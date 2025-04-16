@@ -6,15 +6,15 @@ function JobSection() {
     const [displayAllJobs, setJobs] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://aidf-back-end-production.up.railway.app/jobs`)
+        axios.get(`https://https://ai-shortlisting-backend.vercel.app/jobs`)
             .then((response) => {
-                  setJobs(response.data);
-                    console.log(response.data);
-                })
+                setJobs(response.data);
+                console.log(response.data);
+            })
             .catch((err) => console.log(err));
     }, []);
 
-    if(!displayAllJobs) {
+    if (!displayAllJobs) {
         return <div className="mt-3">Loading...</div>
     }
     return (
@@ -24,8 +24,8 @@ function JobSection() {
                 {
                     displayAllJobs.map((job) => (
                         <JobCard
-                            key={job._id} 
-                            id={job._id} 
+                            key={job._id}
+                            id={job._id}
                             title={job.title}
                             type={job.type}
                             location={job.location}
