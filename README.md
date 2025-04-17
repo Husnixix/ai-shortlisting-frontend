@@ -20,7 +20,6 @@ HirelyAI simplifies the hiring process using AI that evaluates candidates based 
 1. Clone the repository:
 ```
 git clone https://github.com/Husnixix/ai-booking-frontend.git
-cd ai-booking-frontend
 ```
 
 2. Install dependencies:
